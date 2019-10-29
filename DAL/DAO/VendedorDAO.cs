@@ -142,6 +142,22 @@ namespace back_sistema_tg.DAL.DAO
             if(idVendedor != null)
             {
                 _context.CollectionVendedor.DeleteOne(vendedor => vendedor.IdVendedor == idVendedor);
+
+                var procuraEmEspera = _context.CollectionFilaEspera.Find<FilaEspera>(list => list.Vendedor.IdVendedor == idVendedor).FirstOrDefault();
+                var procuraEmAtendimento = _context.CollectionFilaAtendimento.Find<FilaAtendimento>(list => list.Vendedor.IdVendedor == idVendedor).FirstOrDefault();
+                var procuraEmAusencia = _context.CollectionFilaAusencia.Find<FilaAusencia>(list => list.Vendedor.IdVendedor == idVendedor).FirstOrDefault();
+            
+                if(procuraEmEspera != null){
+                     _context.CollectionFilaEspera.DeleteOne(list => list.Vendedor.IdVendedor == idVendedor);
+                }
+
+                if(procuraEmAtendimento != null){
+                     _context.CollectionFilaAtendimento.DeleteOne(list => list.Vendedor.IdVendedor == idVendedor);
+                }
+
+                if(procuraEmAusencia != null){
+                     _context.CollectionFilaAusencia.DeleteOne(list => list.Vendedor.IdVendedor == idVendedor);
+                }          
             }
             
             this.Mensagem = "Falha ao executar o metodo ExcluirVendedor() DAO";
