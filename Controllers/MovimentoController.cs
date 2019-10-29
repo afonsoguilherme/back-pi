@@ -53,6 +53,19 @@ namespace back_sistema_tg.Controllers
                 return BadRequest(ex);
             }
         }
+
+        [HttpGet("ObterMovimentoPorVendedor/{idVendedor}")]
+        public ActionResult<List<Movimento>> ObterMovimentoPorVendedor(string idVendedor)
+        {
+            try
+            {
+                return Ok(_movimentoBll.ObterMovimentosPorVendedor(idVendedor));
+            }
+            catch(System.Exception ex)
+            {
+                return BadRequest(ex);
+            }
+        }
        
         [HttpPost("AdicionarNovoMovimento")]
         public ActionResult<Movimento> AdicionarNovoMovimento(MovimentoDTO movimento)
@@ -60,6 +73,20 @@ namespace back_sistema_tg.Controllers
             try
             {
                 _movimentoBll.AdicionarNovoMovimento(movimento);
+                return Ok();
+            }
+            catch (System.Exception ex)
+            {
+                return BadRequest(ex);
+            }
+        }
+
+        [HttpPost("FinalizarMovimento")]
+        public ActionResult<Movimento> FinalizarMovimento(MovimentoDTO movimento)
+        {
+            try
+            {
+                _movimentoBll.FinalizarMovimento(movimento);
                 return Ok();
             }
             catch (System.Exception ex)

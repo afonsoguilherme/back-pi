@@ -37,6 +37,15 @@ namespace back_sistema_tg.BLL
             return null;
         }
 
+        public List<MovimentoDTO> ObterMovimentosPorVendedor(string idVendedor)
+        {
+            if((idVendedor != null)&&(idVendedor != ""))
+            {
+               return _movimentoDAO.ObterMovimentosPorVendedor(idVendedor); 
+            }  
+            return null;
+        }
+
         public void AdicionarNovoMovimento(MovimentoDTO movimento)
         {
             if((movimento != null)&&(movimento.IdVendedor != null))
@@ -45,6 +54,16 @@ namespace back_sistema_tg.BLL
             }
             
             this.Movimento = "Falha na execucao do metodo AdicionarNovoMovimento() BLL";
+        }
+
+        public void FinalizarMovimento(MovimentoDTO movimento)
+        {
+            if((movimento != null)&&(movimento.IdVendedor != null))
+            {
+                _movimentoDAO.FinalizarMovimento(movimento);
+            }
+            
+            this.Movimento = "Falha na execucao do metodo FinalizarMovimento() BLL";
         }
 
         public void AtualizarMovimento(string idMovimento, MovimentoDTO movimentoNew)

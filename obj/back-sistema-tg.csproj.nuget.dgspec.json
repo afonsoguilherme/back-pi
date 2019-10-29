@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "I:\\6Periodo\\projeto_integrador\\back-pi\\back-sistema-tg.csproj": {}
+    "C:\\Users\\adm\\Documents\\PI\\back-pi\\back-sistema-tg.csproj": {}
   },
   "projects": {
-    "I:\\6Periodo\\projeto_integrador\\back-pi\\back-sistema-tg.csproj": {
+    "C:\\Users\\adm\\Documents\\PI\\back-pi\\back-sistema-tg.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "I:\\6Periodo\\projeto_integrador\\back-pi\\back-sistema-tg.csproj",
+        "projectUniqueName": "C:\\Users\\adm\\Documents\\PI\\back-pi\\back-sistema-tg.csproj",
         "projectName": "back-sistema-tg",
-        "projectPath": "I:\\6Periodo\\projeto_integrador\\back-pi\\back-sistema-tg.csproj",
-        "packagesPath": "C:\\Users\\alpha\\.nuget\\packages\\",
-        "outputPath": "I:\\6Periodo\\projeto_integrador\\back-pi\\obj\\",
+        "projectPath": "C:\\Users\\adm\\Documents\\PI\\back-pi\\back-sistema-tg.csproj",
+        "packagesPath": "C:\\Users\\adm\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\adm\\Documents\\PI\\back-pi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\alpha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\adm\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
