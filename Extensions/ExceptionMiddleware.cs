@@ -1,13 +1,13 @@
 using System;
 using System.Net;
 using System.Threading.Tasks;
-using back_sistema_tg.BLL.Exceptions;
-using back_sistema_tg.Extensions.Responses;
-using back_sistema_tg.Utils;
+using back_pi.BLL.Exceptions;
+using back_pi.Extensions.Responses;
+using back_pi.Utils;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 
-namespace back_sistema_tg.Extensions
+namespace back_pi.Extensions
 {
     public class ExceptionMiddleware
     {

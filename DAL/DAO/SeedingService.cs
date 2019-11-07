@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using back_sistema_tg.DAL.Models;
+using back_pi.DAL.Models;
 using MongoDB.Driver;
 
-namespace back_sistema_tg.DAL.DAO
+namespace back_pi.DAL.DAO
 {
     public class SeedingService
     {

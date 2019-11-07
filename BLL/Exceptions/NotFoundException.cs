@@ -1,6 +1,6 @@
 using System;
 
-namespace back_sistema_tg.BLL.Exceptions
+namespace back_pi.BLL.Exceptions
 {
     public class  NotFoundException : ApplicationException
     {

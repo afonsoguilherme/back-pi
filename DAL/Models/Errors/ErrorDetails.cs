@@ -1,6 +1,6 @@
 using Newtonsoft.Json;
 
-namespace back_sistema_tg.Controllers.Errors
+namespace back_pi.Controllers.Errors
 {
     public class ErrorDetails
     {

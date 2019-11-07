@@ -5,12 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
-using back_sistema_tg.BLL;
-using back_sistema_tg.BLL.Exceptions;
-using back_sistema_tg.DAL.DAO;
-using back_sistema_tg.Extensions;
-using back_sistema_tg.Extensions.Filters;
-using back_sistema_tg.Utils;
+using back_pi.BLL;
+using back_pi.BLL.Exceptions;
+using back_pi.DAL.DAO;
+using back_pi.Extensions;
+using back_pi.Extensions.Filters;
+using back_pi.Utils;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -26,7 +26,7 @@ using MongoDB.Driver;
 using NLog;
 using Swashbuckle.AspNetCore.Swagger;
 
-namespace back_sistema_tg
+namespace back_pi
 {
     public class Startup
     {

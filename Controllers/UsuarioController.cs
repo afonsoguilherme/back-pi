@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using back_sistema_tg.BLL;
-using back_sistema_tg.DAL.DTO;
-using back_sistema_tg.Utils;
-using back_sistema_tg.BLL.Exceptions;
+using back_pi.BLL;
+using back_pi.DAL.DTO;
+using back_pi.Utils;
+using back_pi.BLL.Exceptions;
 using Newtonsoft.Json;
 using System.Threading.Tasks;
-using back_sistema_tg.DAL.Models;
-using back_sistema_tg.Extensions.Responses;
+using back_pi.DAL.Models;
+using back_pi.Extensions.Responses;
 using AutoMapper;
 
-namespace back_sistema_tg.Controllers
+namespace back_pi.Controllers
 {
     //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     [Route("api/[controller]")]

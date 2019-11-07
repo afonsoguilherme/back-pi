@@ -2,9 +2,9 @@ using System;
 using MongoDB.Driver;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
-using back_sistema_tg.DAL.Models;
+using back_pi.DAL.Models;
 
-namespace back_sistema_tg.DAL.DAO
+namespace back_pi.DAL.DAO
 {
     public class MongoContext:IMongoContext
     {

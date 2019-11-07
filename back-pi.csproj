@@ -19,8 +19,6 @@
     <PackageReference Include="Nlog.Extensions.Logging" Version="1.5.1" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="4.0.1" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2" />
-    
-
     <PackageReference Include="ChoETL" Version="1.0.9.5" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="morelinq" Version="3.2.0" />

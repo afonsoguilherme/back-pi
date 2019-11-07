@@ -1,11 +1,11 @@
 using System.Net;
-using back_sistema_tg.Controllers.Errors;
-using back_sistema_tg.Utils;
+using back_pi.Controllers.Errors;
+using back_pi.Utils;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;
 
-namespace back_sistema_tg.Extensions
+namespace back_pi.Extensions
 {
     public static class ExceptionMiddlewareExtensions
     {

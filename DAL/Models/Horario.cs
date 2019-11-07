@@ -1,6 +1,6 @@
 using System;
 
-namespace back_sistema_tg.DAL.Models
+namespace back_pi.DAL.Models
 {
     public class Horario
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 
-namespace back_sistema_tg.Extensions.Responses
+namespace back_pi.Extensions.Responses
 {
     public class ApiBadRequestResponse : ApiResponse
     {

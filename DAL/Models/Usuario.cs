@@ -1,7 +1,7 @@
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace back_sistema_tg.DAL.Models
+namespace back_pi.DAL.Models
 {
     public class Usuario
     {

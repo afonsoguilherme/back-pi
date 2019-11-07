@@ -1,7 +1,7 @@
 using System.Collections.Generic;
-using back_sistema_tg.DAL.Models;
+using back_pi.DAL.Models;
 
-namespace back_sistema_tg.DAL.DTO
+namespace back_pi.DAL.DTO
 {
     public class FilaAusenciaDTO
     {

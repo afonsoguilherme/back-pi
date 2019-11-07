@@ -1,19 +1,16 @@
 using System.Linq;
-using System.Collections.Generic;
 using MongoDB.Driver;
 using System;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Net.Http.Headers;
-using MongoDB.Driver;
 using Newtonsoft.Json;
 using System.Net.Http;
 using Microsoft.Extensions.Configuration;
-using back_sistema_tg.DAL.DTO;
-using back_sistema_tg.DAL.Models;
+using back_pi.DAL.DTO;
+using back_pi.DAL.Models;
 
-namespace back_sistema_tg.DAL.DAO
+namespace back_pi.DAL.DAO
 {
     public class MovimentoDAO : IMovimentoDAO
     {

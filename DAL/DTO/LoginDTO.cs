@@ -1,4 +1,4 @@
-namespace back_sistema_tg.DAL.DTO
+namespace back_pi.DAL.DTO
 {
     public class LoginDTO
     {

@@ -1,6 +1,6 @@
 using NLog;
 
-namespace back_sistema_tg.Utils
+namespace back_pi.Utils
 {
     public class LoggerManager : ILoggerManager
     {

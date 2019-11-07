@@ -1,4 +1,4 @@
-namespace back_sistema_tg.DAL.DAO
+namespace back_pi.DAL.DAO
 {
     public class Configuracoes
     {

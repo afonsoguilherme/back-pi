@@ -1,6 +1,6 @@
 using Newtonsoft.Json;
 
-namespace back_sistema_tg.Extensions.Responses
+namespace back_pi.Extensions.Responses
 {
     public class ApiResponse
     {
