@@ -27,6 +27,7 @@ namespace back_pi.DAL.DAO
            
            foreach (var item in VendaNaoSucedidas)
             {
+                var vendedor = _context.CollectionVendedor.Find<Vendedor>(m => m.IdVendedor == item.IdVendedor).FirstOrDefault();
                 var movimento = _context.CollectionMovimento.Find<Movimento>(m => m.IdMovimento == item.IdMovimento).FirstOrDefault();
     
                 VendaNaoSucedidaDTO vns = new VendaNaoSucedidaDTO{
@@ -38,6 +39,8 @@ namespace back_pi.DAL.DAO
                     DescricaoProduto = item.DescricaoProduto,
                     NomeCliente = item.NomeCliente,
                     TelefoneCliente = item.TelefoneCliente,
+                    IdVendedor = item.IdVendedor,
+                    Vendedor = vendedor,
                     IdMovimento = item.IdMovimento,
                     Movimento = movimento
                 };
@@ -51,7 +54,7 @@ namespace back_pi.DAL.DAO
             if(idVendaNaoSucedida != null)
             {
                 var resultado = _context.CollectionVendaNaoSucedida.Find<VendaNaoSucedida>(vendaNaoSucedida => vendaNaoSucedida.IdVendaNaoSucedida == idVendaNaoSucedida).FirstOrDefault();
-                
+                var vendedor = _context.CollectionVendedor.Find<Vendedor>(m => m.IdVendedor == resultado.IdVendedor).FirstOrDefault();
                 var movimento = _context.CollectionMovimento.Find<Movimento>(m => m.IdMovimento == resultado.IdMovimento).FirstOrDefault();
     
                 VendaNaoSucedidaDTO vendaNaoSucedidaDTO = new VendaNaoSucedidaDTO{
@@ -63,6 +66,8 @@ namespace back_pi.DAL.DAO
                     DescricaoProduto = resultado.DescricaoProduto,
                     NomeCliente = resultado.NomeCliente,
                     TelefoneCliente = resultado.TelefoneCliente,
+                    IdVendedor = resultado.IdVendedor,
+                    Vendedor = vendedor,
                     IdMovimento = resultado.IdMovimento,
                     Movimento = movimento
                 };
@@ -78,8 +83,13 @@ namespace back_pi.DAL.DAO
         {
             if(vendaNaoSucedida != null)
             {
+                var sort = Builders<Movimento>.Sort.Descending(m => m.IdMovimento);
+
+                var item = _context.CollectionMovimento.Find<Movimento>(m => m.IdVendedor == vendaNaoSucedida.IdVendedor).Sort(sort).FirstOrDefault();
+
                 VendaNaoSucedida vendaNaoSucedidaNova = new VendaNaoSucedida{
-                    IdMovimento = vendaNaoSucedida.IdMovimento,
+                    IdVendedor = vendaNaoSucedida.IdVendedor,
+                    IdMovimento = item.IdMovimento,
                     TipoProduto = vendaNaoSucedida.TipoProduto,
                     MarcaProduto = vendaNaoSucedida.MarcaProduto,
                     CorProduto = vendaNaoSucedida.CorProduto,
@@ -101,6 +111,7 @@ namespace back_pi.DAL.DAO
             {
                 VendaNaoSucedida vendaNaoSucedidaNova = new VendaNaoSucedida{
                     IdVendaNaoSucedida = idVendaNaoSucedida,
+                    IdVendedor = vendaNaoSucedidaNew.IdVendedor,
                     IdMovimento = vendaNaoSucedidaNew.IdMovimento,
                     TipoProduto = vendaNaoSucedidaNew.TipoProduto,
                     MarcaProduto = vendaNaoSucedidaNew.MarcaProduto,

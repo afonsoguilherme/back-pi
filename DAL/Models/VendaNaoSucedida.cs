@@ -9,9 +9,12 @@ namespace back_pi.DAL.Models
         [BsonRepresentation(BsonType.ObjectId)]
         public string IdVendaNaoSucedida { get; set; }
 
+        [BsonElement("IdVendedor")]
+        public string IdVendedor { get; set; }
+
         [BsonElement("IdMovimento")]
         public string IdMovimento { get; set; }
-
+        
         [BsonElement("TipoProduto")]
         public string TipoProduto { get; set; }
 
