@@ -12,14 +12,20 @@ namespace back_sistema_tg.DAL.Models
         [BsonElement("IdMovimento")]
         public string IdMovimento { get; set; }
 
-        [BsonElement("ModeloProduto")]
-        public string ModeloProduto { get; set; }
+        [BsonElement("TipoProduto")]
+        public string TipoProduto { get; set; }
+
+        [BsonElement("MarcaProduto")]
+        public string MarcaProduto { get; set; }
 
         [BsonElement("CorProduto")]
         public string CorProduto { get; set; }
 
         [BsonElement("NumeroProduto")]
         public string NumeroProduto { get; set; }
+
+        [BsonElement("DescricaoProduto")]
+        public string DescricaoProduto { get; set; }
 
         [BsonElement("NomeCliente")]
         public string NomeCliente { get; set; }

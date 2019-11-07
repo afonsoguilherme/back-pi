@@ -31,9 +31,11 @@ namespace back_sistema_tg.DAL.DAO
     
                 VendaNaoSucedidaDTO vns = new VendaNaoSucedidaDTO{
                     IdVendaNaoSucedida = item.IdVendaNaoSucedida,
-                    ModeloProduto = item.ModeloProduto,
+                    TipoProduto = item.TipoProduto,
+                    MarcaProduto = item.MarcaProduto,
                     CorProduto = item.CorProduto,
                     NumeroProduto = item.NumeroProduto,
+                    DescricaoProduto = item.DescricaoProduto,
                     NomeCliente = item.NomeCliente,
                     TelefoneCliente = item.TelefoneCliente,
                     IdMovimento = item.IdMovimento,
@@ -54,9 +56,11 @@ namespace back_sistema_tg.DAL.DAO
     
                 VendaNaoSucedidaDTO vendaNaoSucedidaDTO = new VendaNaoSucedidaDTO{
                     IdVendaNaoSucedida = resultado.IdVendaNaoSucedida,
-                    ModeloProduto = resultado.ModeloProduto,
+                    TipoProduto = resultado.TipoProduto,
+                    MarcaProduto = resultado.MarcaProduto,
                     CorProduto = resultado.CorProduto,
                     NumeroProduto = resultado.NumeroProduto,
+                    DescricaoProduto = resultado.DescricaoProduto,
                     NomeCliente = resultado.NomeCliente,
                     TelefoneCliente = resultado.TelefoneCliente,
                     IdMovimento = resultado.IdMovimento,
@@ -76,9 +80,11 @@ namespace back_sistema_tg.DAL.DAO
             {
                 VendaNaoSucedida vendaNaoSucedidaNova = new VendaNaoSucedida{
                     IdMovimento = vendaNaoSucedida.IdMovimento,
-                    ModeloProduto = vendaNaoSucedida.ModeloProduto,
+                    TipoProduto = vendaNaoSucedida.TipoProduto,
+                    MarcaProduto = vendaNaoSucedida.MarcaProduto,
                     CorProduto = vendaNaoSucedida.CorProduto,
                     NumeroProduto = vendaNaoSucedida.NumeroProduto,
+                    DescricaoProduto = vendaNaoSucedida.DescricaoProduto,
                     NomeCliente = vendaNaoSucedida.NomeCliente,
                     TelefoneCliente = vendaNaoSucedida.TelefoneCliente
                 };
@@ -96,9 +102,11 @@ namespace back_sistema_tg.DAL.DAO
                 VendaNaoSucedida vendaNaoSucedidaNova = new VendaNaoSucedida{
                     IdVendaNaoSucedida = idVendaNaoSucedida,
                     IdMovimento = vendaNaoSucedidaNew.IdMovimento,
-                    ModeloProduto = vendaNaoSucedidaNew.ModeloProduto,
+                    TipoProduto = vendaNaoSucedidaNew.TipoProduto,
+                    MarcaProduto = vendaNaoSucedidaNew.MarcaProduto,
                     CorProduto = vendaNaoSucedidaNew.CorProduto,
                     NumeroProduto = vendaNaoSucedidaNew.NumeroProduto,
+                    DescricaoProduto = vendaNaoSucedidaNew.DescricaoProduto,
                     NomeCliente = vendaNaoSucedidaNew.NomeCliente,
                     TelefoneCliente = vendaNaoSucedidaNew.TelefoneCliente
                 };

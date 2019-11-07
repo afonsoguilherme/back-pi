@@ -9,9 +9,7 @@ namespace back_sistema_tg.DAL.DTO
         public string IdVendedor { get; set; }
         public string TipoMovimento { get; set; }
         public bool StatusVenda { get; set; }
-        public string JustificativaVenda { get; set; }
-        public DateTime InicioMovimento { get; set; }
-        public DateTime FinalMovimento { get; set; }
+        public Horario HorarioMovimento { get; set; }
         public Vendedor Vendedor { get; set; }
     }
 }

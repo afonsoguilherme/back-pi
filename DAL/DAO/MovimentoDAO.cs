@@ -1,6 +1,14 @@
 using System.Linq;
 using System.Collections.Generic;
 using MongoDB.Driver;
+using System;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+using System.Net.Http.Headers;
+using MongoDB.Driver;
+using Newtonsoft.Json;
+using System.Net.Http;
 using Microsoft.Extensions.Configuration;
 using back_sistema_tg.DAL.DTO;
 using back_sistema_tg.DAL.Models;
@@ -34,9 +42,7 @@ namespace back_sistema_tg.DAL.DAO
                     IdVendedor = item.IdVendedor,
                     TipoMovimento = item.TipoMovimento,
                     StatusVenda = item.StatusVenda,
-                    JustificativaVenda = item.JustificativaVenda,
-                    InicioMovimento = item.InicioMovimento,
-                    FinalMovimento = item.FinalMovimento,
+                    HorarioMovimento = item.HorarioMovimento,
                     Vendedor = vendedor
                 };
                 movimentos.Add(m);
@@ -57,9 +63,7 @@ namespace back_sistema_tg.DAL.DAO
                     IdVendedor = item.IdVendedor,
                     TipoMovimento = item.TipoMovimento,
                     StatusVenda = item.StatusVenda,
-                    JustificativaVenda = item.JustificativaVenda,
-                    InicioMovimento = item.InicioMovimento,
-                    FinalMovimento = item.FinalMovimento,
+                    HorarioMovimento = item.HorarioMovimento,
                     Vendedor = vendedor
                 };
                 return movimentoDTO;
@@ -86,9 +90,7 @@ namespace back_sistema_tg.DAL.DAO
                     IdVendedor = item.IdVendedor,
                     TipoMovimento = item.TipoMovimento,
                     StatusVenda = item.StatusVenda,
-                    JustificativaVenda = item.JustificativaVenda,
-                    InicioMovimento = item.InicioMovimento,
-                    FinalMovimento = item.FinalMovimento,
+                    HorarioMovimento = item.HorarioMovimento,
                     Vendedor = vendedor
                 };
                 movimentos.Add(m);
@@ -100,13 +102,18 @@ namespace back_sistema_tg.DAL.DAO
         {
             if( movimento != null)
             {
+                Horario movimentoHorario = new Horario();
+
+                movimentoHorario.HoraInicioMovimento = DateTime.SpecifyKind(movimento.HorarioMovimento.HoraInicioMovimento, DateTimeKind.Utc);
+                movimentoHorario.HoraFinalMovimento = new DateTime();
+                movimentoHorario.DataInicioMovimento = movimento.HorarioMovimento.DataInicioMovimento;
+                movimentoHorario.DataFinalMovimento = new DateTime();
+
                 Movimento movimentoNovo = new Movimento{
                     IdVendedor = movimento.IdVendedor,
                     TipoMovimento = movimento.TipoMovimento,
                     StatusVenda = movimento.StatusVenda,
-                    JustificativaVenda = movimento.JustificativaVenda,
-                    InicioMovimento = movimento.InicioMovimento,
-                    FinalMovimento = movimento.FinalMovimento
+                    HorarioMovimento = movimentoHorario
                 };
             
                 _context.CollectionMovimento.InsertOne(movimentoNovo);
@@ -122,15 +129,20 @@ namespace back_sistema_tg.DAL.DAO
                 var sort = Builders<Movimento>.Sort.Descending(m => m.IdMovimento);
 
                 var item = _context.CollectionMovimento.Find<Movimento>(m => m.IdVendedor == movimento.IdVendedor).Sort(sort).FirstOrDefault();
+                
+                Horario movimentoHorario = new Horario();
+                    
+                movimentoHorario.HoraInicioMovimento = item.HorarioMovimento.HoraInicioMovimento;
+                movimentoHorario.HoraFinalMovimento = DateTime.SpecifyKind(movimento.HorarioMovimento.HoraFinalMovimento, DateTimeKind.Utc);
+                movimentoHorario.DataInicioMovimento = item.HorarioMovimento.DataInicioMovimento;
+                movimentoHorario.DataFinalMovimento = movimento.HorarioMovimento.DataFinalMovimento;
 
                 Movimento movimentoNovo = new Movimento{
                     IdMovimento = item.IdMovimento,
                     IdVendedor = item.IdVendedor,
                     TipoMovimento = item.TipoMovimento,
                     StatusVenda = movimento.StatusVenda,
-                    JustificativaVenda = movimento.JustificativaVenda,
-                    InicioMovimento = item.InicioMovimento,
-                    FinalMovimento = movimento.FinalMovimento,
+                    HorarioMovimento = movimentoHorario
                 };
             
                 _context.CollectionMovimento.ReplaceOne(m => m.IdMovimento == item.IdMovimento, movimentoNovo);
@@ -143,14 +155,19 @@ namespace back_sistema_tg.DAL.DAO
         {
             if((idMovimento != null)&&(movimentoNew != null))
             {
+                 Horario movimentoHorario = new Horario();
+
+                movimentoHorario.HoraInicioMovimento = DateTime.SpecifyKind(movimentoNew.HorarioMovimento.HoraInicioMovimento, DateTimeKind.Utc);
+                movimentoHorario.HoraFinalMovimento = DateTime.SpecifyKind(movimentoNew.HorarioMovimento.HoraFinalMovimento, DateTimeKind.Utc);
+                movimentoHorario.DataInicioMovimento = movimentoNew.HorarioMovimento.DataInicioMovimento;
+                movimentoHorario.DataFinalMovimento = movimentoNew.HorarioMovimento.DataFinalMovimento;
+
                 Movimento movimentoNovo = new Movimento{
                     IdMovimento = idMovimento,
                     IdVendedor = movimentoNew.IdVendedor,
                     TipoMovimento = movimentoNew.TipoMovimento,
                     StatusVenda = movimentoNew.StatusVenda,
-                    JustificativaVenda = movimentoNew.JustificativaVenda,
-                    InicioMovimento = movimentoNew.InicioMovimento,
-                    FinalMovimento = movimentoNew.FinalMovimento
+                    HorarioMovimento = movimentoNew.HorarioMovimento
                 };
 
                 _context.CollectionMovimento.ReplaceOne(movimento => movimento.IdMovimento == idMovimento, movimentoNovo);

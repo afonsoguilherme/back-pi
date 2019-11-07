@@ -19,13 +19,7 @@ namespace back_sistema_tg.DAL.Models
         [BsonElement("StatusVenda")]
         public bool StatusVenda { get; set; }
 
-        [BsonElement("JustificativaVenda")]
-        public string JustificativaVenda { get; set; }
-
-        [BsonElement("InicioMovimento")]
-        public DateTime InicioMovimento { get; set; }
-
-        [BsonElement("FinalMovimento")]
-        public DateTime FinalMovimento { get; set; }
+        [BsonElement("HorarioMovimento")]
+        public Horario HorarioMovimento { get; set; }
     }
 }
