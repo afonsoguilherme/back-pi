@@ -1,7 +1,3 @@
-internallog.txt
-obj/
 bin/
-dist/
-.vscode/
-
-Utils/
+obj/
+Utils/internal_logs/internallog.txt
