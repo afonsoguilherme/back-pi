@@ -42,8 +42,10 @@ namespace back_pi.DAL.DAO
                     HorarioMovimento = item.HorarioMovimento,
                     Vendedor = vendedor
                 };
+
                 movimentos.Add(m);
             }
+
             return movimentos;
         }
         
@@ -63,8 +65,10 @@ namespace back_pi.DAL.DAO
                     HorarioMovimento = item.HorarioMovimento,
                     Vendedor = vendedor
                 };
+
                 return movimentoDTO;
-            }           
+            }      
+
             this.Mensagem = "Falha ao executar o metodo ObterMovimentoPorId() DAO";
             
             return null;
@@ -90,8 +94,60 @@ namespace back_pi.DAL.DAO
                     HorarioMovimento = item.HorarioMovimento,
                     Vendedor = vendedor
                 };
+
                 movimentos.Add(m);
             }
+
+            return movimentos;
+        }
+
+        public List<MovimentoDTO> ObterMovimentosTipoVenda()
+        {
+            List<MovimentoDTO> movimentos = new List<MovimentoDTO>();
+
+            var Movimentos = _context.CollectionMovimento.Find(movimento => movimento.TipoMovimento.ToUpper() == "Venda".ToUpper()).ToList();
+
+            foreach (var item in Movimentos)
+            {
+                var vendedor = _context.CollectionVendedor.Find<Vendedor>(v => v.IdVendedor == item.IdVendedor).FirstOrDefault();
+            
+                MovimentoDTO m = new MovimentoDTO{
+                    IdMovimento = item.IdMovimento,
+                    IdVendedor = item.IdVendedor,
+                    TipoMovimento = item.TipoMovimento,
+                    StatusVenda = item.StatusVenda,
+                    HorarioMovimento = item.HorarioMovimento,
+                    Vendedor = vendedor
+                };
+
+                movimentos.Add(m);
+            }
+
+            return movimentos;
+        }
+
+        public List<MovimentoDTO> ObterMovimentosTipoAusencia()
+        {
+            List<MovimentoDTO> movimentos = new List<MovimentoDTO>();
+
+            var Movimentos = _context.CollectionMovimento.Find(movimento => movimento.TipoMovimento.ToUpper() == "Ausencia".ToUpper()).ToList();
+
+            foreach (var item in Movimentos)
+            {
+                var vendedor = _context.CollectionVendedor.Find<Vendedor>(v => v.IdVendedor == item.IdVendedor).FirstOrDefault();
+            
+                MovimentoDTO m = new MovimentoDTO{
+                    IdMovimento = item.IdMovimento,
+                    IdVendedor = item.IdVendedor,
+                    TipoMovimento = item.TipoMovimento,
+                    StatusVenda = item.StatusVenda,
+                    HorarioMovimento = item.HorarioMovimento,
+                    Vendedor = vendedor
+                };
+
+                movimentos.Add(m);
+            }
+
             return movimentos;
         }
         

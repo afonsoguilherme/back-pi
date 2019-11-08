@@ -46,6 +46,28 @@ namespace back_pi.BLL
             return null;
         }
 
+        public List<MovimentoDTO> ObterMovimentosTipoVenda()
+        {
+            var verifica = _movimentoDAO.ObterMovimentosTipoVenda();
+
+            if(verifica == null){ return null; }
+            
+            this.Movimento = "Metodo ObterMovimentosTipoVenda() BLL executado corretamente";
+            
+            return verifica;
+        }
+
+        public List<MovimentoDTO> ObterMovimentosTipoAusencia()
+        {
+            var verifica = _movimentoDAO.ObterMovimentosTipoAusencia();
+
+            if(verifica == null){ return null; }
+            
+            this.Movimento = "Metodo ObterMovimentosTipoAusencia() BLL executado corretamente";
+            
+            return verifica;
+        }
+
         public void AdicionarNovoMovimento(MovimentoDTO movimento)
         {
             if((movimento != null)&&(movimento.IdVendedor != null))

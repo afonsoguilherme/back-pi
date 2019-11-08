@@ -12,6 +12,8 @@ namespace back_pi.DAL.DAO
         void FinalizarMovimento(MovimentoDTO movimento);
         List<MovimentoDTO> ObterTodosMovimentos();
         List<MovimentoDTO> ObterMovimentosPorVendedor(string idVendedor);
+        List<MovimentoDTO> ObterMovimentosTipoVenda();
+        List<MovimentoDTO> ObterMovimentosTipoAusencia();
         MovimentoDTO ObterMovimentoPorId(string idMovimento);
         void AtualizarMovimento(string idMovimento, MovimentoDTO movimentoNew);
         void ExcluirMovimento(string idMovimento);

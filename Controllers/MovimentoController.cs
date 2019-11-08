@@ -1,17 +1,9 @@
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Authorization;
 using back_pi.BLL;
 using back_pi.DAL.DTO;
-using back_pi.Utils;
-using back_pi.BLL.Exceptions;
-using Newtonsoft.Json;
-using System.Threading.Tasks;
 using back_pi.DAL.Models;
-using back_pi.Extensions.Responses;
-using AutoMapper;
+
 
 namespace back_pi.Controllers
 {
@@ -67,6 +59,32 @@ namespace back_pi.Controllers
             }
         }
        
+        [HttpGet("ObterMovimentosTipoVenda")]
+        public ActionResult<List<Movimento>> ObterMovimentosTipoVenda()
+        {
+            try
+            {
+                return Ok(_movimentoBll.ObterMovimentosTipoVenda());
+            }
+            catch(System.Exception ex)
+            {
+                return BadRequest(ex);
+            }
+        }
+
+        [HttpGet("ObterMovimentosTipoAusencia")]
+        public ActionResult<List<Movimento>> ObterMovimentosTipoAusencia()
+        {
+            try
+            {
+                return Ok(_movimentoBll.ObterMovimentosTipoAusencia());
+            }
+            catch(System.Exception ex)
+            {
+                return BadRequest(ex);
+            }
+        }
+
         [HttpPost("AdicionarNovoMovimento")]
         public ActionResult<Movimento> AdicionarNovoMovimento(MovimentoDTO movimento)
         {
