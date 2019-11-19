@@ -1,12 +1,8 @@
 ﻿﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using AutoMapper;
 using back_pi.BLL;
-using back_pi.BLL.Exceptions;
 using back_pi.DAL.DAO;
 using back_pi.Extensions;
 using back_pi.Extensions.Filters;
@@ -15,12 +11,9 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using MongoDB.Driver;
 using NLog;
@@ -132,6 +125,21 @@ namespace back_pi
 
             services.AddScoped<IFilaAusenciaDAO, FilaAusenciaDAO>();
             services.AddScoped<IFilaAusenciaBll, FilaAusenciaBll>();
+
+            services.AddScoped<IMarcaDAO, MarcaDAO>();
+            services.AddScoped<IMarcaBll, MarcaBll>();
+
+            services.AddScoped<ICorDAO, CorDAO>();
+            services.AddScoped<ICorBll, CorBll>();
+
+            services.AddScoped<ITipoDAO, TipoDAO>();
+            services.AddScoped<ITipoBll, TipoBll>();
+
+            services.AddScoped<ITamanhoNumericoDAO, TamanhoNumericoDAO>();
+            services.AddScoped<ITamanhoNumericoBll, TamanhoNumericoBll>();
+
+            services.AddScoped<ITamanhoAlfabeticoDAO, TamanhoAlfabeticoDAO>();
+            services.AddScoped<ITamanhoAlfabeticoBll, TamanhoAlfabeticoBll>();
 
             services.AddScoped<SeedingService>();
         }

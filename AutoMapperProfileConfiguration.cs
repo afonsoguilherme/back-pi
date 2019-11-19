@@ -49,6 +49,36 @@ namespace back_pi
                 AfterMap((dto, model) => model.IdVendedorEmAusencia = dto.IdVendedorEmAusencia);
             CreateMap<FilaAusencia, FilaAusenciaDTO>()
                 .AfterMap((model, dto) => dto.IdVendedorEmAusencia = model.IdVendedorEmAusencia);
+
+                // Mapeando a classe Marca
+            CreateMap<MarcaDTO, Marca>().
+                AfterMap((dto, model) => model.IdMarca = dto.IdMarca);
+            CreateMap<Marca, MarcaDTO>()
+                .AfterMap((model, dto) => dto.IdMarca = model.IdMarca);
+
+                // Mapeando a classe Tipo
+            CreateMap<TipoDTO, Tipo>().
+                AfterMap((dto, model) => model.IdTipo = dto.IdTipo);
+            CreateMap<Tipo, TipoDTO>()
+                .AfterMap((model, dto) => dto.IdTipo = model.IdTipo);
+
+                // Mapeando a classe Cor
+            CreateMap<CorDTO, Cor>().
+                AfterMap((dto, model) => model.IdCor = dto.IdCor);
+            CreateMap<Cor, CorDTO>()
+                .AfterMap((model, dto) => dto.IdCor = model.IdCor);
+
+                // Mapeando a classe TamanhoAlfabetico
+            CreateMap<TamanhoAlfabeticoDTO, TamanhoAlfabetico>().
+                AfterMap((dto, model) => model.IdTamanhoAlfabetico = dto.IdTamanhoAlfabetico);
+            CreateMap<TamanhoAlfabetico, TamanhoAlfabeticoDTO>()
+                .AfterMap((model, dto) => dto.IdTamanhoAlfabetico = model.IdTamanhoAlfabetico);
+
+            // Mapeando a classe TamanhoNumerico
+            CreateMap<TamanhoNumericoDTO, TamanhoNumerico>().
+                AfterMap((dto, model) => model.IdTamanhoNumerico = dto.IdTamanhoNumerico);
+            CreateMap<TamanhoNumerico, TamanhoNumericoDTO>()
+                .AfterMap((model, dto) => dto.IdTamanhoNumerico = model.IdTamanhoNumerico);
         }
     }
 }

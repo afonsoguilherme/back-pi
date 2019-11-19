@@ -4,7 +4,6 @@ using back_pi.BLL;
 using back_pi.DAL.DTO;
 using back_pi.DAL.Models;
 
-
 namespace back_pi.Controllers
 {
     [Produces("application/json")]
@@ -33,8 +32,6 @@ namespace back_pi.Controllers
             }
         }
 
-
-
         [HttpGet("ObterGrafico")]
         public ActionResult ObterGrafico()
         {
@@ -48,13 +45,6 @@ namespace back_pi.Controllers
             }
         }
 
-
-
-
-
-
-
-
         [HttpGet("MovimentosVendedores")]
         public ActionResult<List<Movimento>> MovimentosVendedores()
         {
@@ -67,7 +57,6 @@ namespace back_pi.Controllers
                 return BadRequest(ex);
             }
         }
-
         
         [HttpGet("MovimentosVendedoresNãoSucedido")]
         public ActionResult<List<Movimento>> MovimentosVendedoresNãoSucedido()

@@ -1,23 +1,18 @@
 using System.Collections.Generic;
-using Microsoft.Extensions.Configuration;
 using MongoDB.Driver;
-using back_pi.DAL.DTO;
 using back_pi.DAL.Models;
 
 namespace back_pi.DAL.DAO
 {
     public class UsuarioDAO : IUsuarioDAO
     {
-        // Injeção de Dependências
         private readonly IMongoContext _context;
 
-        // Método Construtor da classe
         public UsuarioDAO(IMongoContext context)
         {
             _context = context;
         }
 
-        
         public void Inserir(Usuario usuario)
         {
             Usuario novoUsuario = new Usuario{

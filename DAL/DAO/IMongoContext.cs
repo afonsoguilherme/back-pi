@@ -12,5 +12,10 @@ namespace back_pi.DAL.DAO
         IMongoCollection<FilaEspera> CollectionFilaEspera { get; }
         IMongoCollection<FilaAtendimento> CollectionFilaAtendimento { get; }
         IMongoCollection<FilaAusencia> CollectionFilaAusencia { get; }
+        IMongoCollection<Cor> CollectionCor { get; }
+        IMongoCollection<Tipo> CollectionTipo { get; }
+        IMongoCollection<Marca> CollectionMarca { get; }
+        IMongoCollection<TamanhoNumerico> CollectionTamanhoNumerico { get; }
+        IMongoCollection<TamanhoAlfabetico> CollectionTamanhoAlfabetico { get; }
     }
 }

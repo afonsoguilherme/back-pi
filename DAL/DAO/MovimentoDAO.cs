@@ -1,12 +1,7 @@
 using System.Linq;
 using MongoDB.Driver;
 using System;
-using System.Threading.Tasks;
 using System.Collections.Generic;
-using System.Net.Http.Headers;
-using Newtonsoft.Json;
-using System.Net.Http;
-using Microsoft.Extensions.Configuration;
 using back_pi.DAL.DTO;
 using back_pi.DAL.Models;
 using back_pi.DAL.DAO.Relatorios;
@@ -286,9 +281,6 @@ namespace back_pi.DAL.DAO
             
             this.Mensagem = "Falha ao executar o metodo ExcluirMovimento() DAO";
         }
-
-
-
 
         public ICollection<Grafico> ObterGrafico()
         {

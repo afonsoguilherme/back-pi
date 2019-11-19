@@ -1,6 +1,4 @@
 using System;
-using System.Collections.Generic;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using back_pi.BLL;
@@ -10,11 +8,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
-using back_pi.BLL.Exceptions;
-using Newtonsoft.Json;
-using System.Threading.Tasks;
 using back_pi.DAL.Models;
-using back_pi.Extensions.Responses;
 using AutoMapper;
 
 namespace back_pi.Controllers

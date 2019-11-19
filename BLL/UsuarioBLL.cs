@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using back_pi.BLL.Exceptions;
 using back_pi.DAL.DAO;
-using back_pi.DAL.DTO;
 using back_pi.DAL.Models;
 using Microsoft.EntityFrameworkCore;
 

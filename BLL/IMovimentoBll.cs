@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using back_pi.DAL.DTO;
-using back_pi.DAL.Models;
 using back_pi.DAL.DAO.Relatorios;
 
 namespace back_pi.BLL
