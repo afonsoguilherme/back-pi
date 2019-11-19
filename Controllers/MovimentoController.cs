@@ -32,6 +32,55 @@ namespace back_pi.Controllers
                 return BadRequest(ex);
             }
         }
+
+
+
+        [HttpGet("ObterGrafico")]
+        public ActionResult ObterGrafico()
+        {
+            try
+            {
+                return Ok(_movimentoBll.ObterGrafico());
+            }
+            catch(System.Exception ex)
+            {
+                return BadRequest(ex);
+            }
+        }
+
+
+
+
+
+
+
+
+        [HttpGet("MovimentosVendedores")]
+        public ActionResult<List<Movimento>> MovimentosVendedores()
+        {
+            try
+            {
+                return Ok(_movimentoBll.MovimentosVendedores());
+            }
+            catch(System.Exception ex)
+            {
+                return BadRequest(ex);
+            }
+        }
+
+        
+        [HttpGet("MovimentosVendedoresNãoSucedido")]
+        public ActionResult<List<Movimento>> MovimentosVendedoresNãoSucedido()
+        {
+            try
+            {
+                return Ok(_movimentoBll.MovimentosVendedoresNãoSucedido());
+            }
+            catch(System.Exception ex)
+            {
+                return BadRequest(ex);
+            }
+        }
         
         [HttpGet("ObterMovimentoPorId/{idMovimento}")]
         public ActionResult<Movimento> ObterMovimentoPorId(string idMovimento)

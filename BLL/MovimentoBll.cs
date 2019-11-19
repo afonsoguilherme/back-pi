@@ -4,6 +4,7 @@ using back_pi.DAL.DAO;
 using back_pi.DAL.DTO;
 using back_pi.DAL.Models;
 using Microsoft.EntityFrameworkCore;
+using back_pi.DAL.DAO.Relatorios;
 
 namespace back_pi.BLL
 {
@@ -24,6 +25,51 @@ namespace back_pi.BLL
             if(verifica == null){ return null; }
             
             this.Movimento = "Metodo ObterTodosMovimentos() BLL executado corretamente";
+            
+            return verifica;
+        }
+          
+
+
+        public ICollection<Grafico> ObterGrafico()
+        {
+            var verifica = _movimentoDAO.ObterGrafico();
+
+            if(verifica == null){ return null; }
+            
+            this.Movimento = "Metodo ObterGrafico() BLL executado corretamente";
+            
+            return verifica;
+        }
+
+
+
+
+
+
+
+
+
+
+
+        public List<MovimentoDTO> MovimentosVendedores()
+        {
+            var verifica = _movimentoDAO.MovimentosVendedores();
+
+            if(verifica == null){ return null; }
+            
+            this.Movimento = "Metodo MovimentosVendedores() BLL executado corretamente";
+            
+            return verifica;
+        }
+
+        public List<MovimentoDTO> MovimentosVendedoresNãoSucedido()
+        {
+            var verifica = _movimentoDAO.MovimentosVendedoresNãoSucedido();
+
+            if(verifica == null){ return null; }
+            
+            this.Movimento = "Metodo MovimentosVendedoresNãoSucedido() BLL executado corretamente";
             
             return verifica;
         }
