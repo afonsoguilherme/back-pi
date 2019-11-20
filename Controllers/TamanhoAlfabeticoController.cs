@@ -10,20 +10,20 @@ namespace back_pi.Controllers
     [Route("api/[Controller]")]
     [ApiController]
     
-    public class TamanhoAlfabeticoController : ControllerBase
+    public class TamanhoController : ControllerBase
     {
-        private readonly ITamanhoAlfabeticoBll _tipoBll;
-        public TamanhoAlfabeticoController(ITamanhoAlfabeticoBll tipoBll)
+        private readonly ITamanhoBll _tipoBll;
+        public TamanhoController(ITamanhoBll tipoBll)
         {
             _tipoBll = tipoBll;
         }
 
-        [HttpGet("ObterTodosTamanhosAlfabeticos")]
-        public ActionResult<List<TamanhoAlfabetico>> ObterTodosTamanhosAlfabeticos()
+        [HttpGet("ObterTodosTamanhos")]
+        public ActionResult<List<Tamanho>> ObterTodosTamanhoss()
         {
             try
             {
-                return Ok(_tipoBll.ObterTodosTamanhosAlfabeticos());
+                return Ok(_tipoBll.ObterTodosTamanhoss());
             }
             catch(System.Exception ex)
             {
@@ -31,12 +31,12 @@ namespace back_pi.Controllers
             }
         }
 
-        [HttpGet("ObterTamanhoAlfabeticoPorId/{idTamanhoAlfabetico}")]
-        public ActionResult<TamanhoAlfabetico> ObterTamanhoAlfabeticoPorId(string idTamanhoAlfabetico)
+        [HttpGet("ObterTamanhoPorId/{idTamanho}")]
+        public ActionResult<Tamanho> ObterTamanhoPorId(string idTamanho)
         {
             try
             {
-                return Ok(_tipoBll.ObterTamanhoAlfabeticoPorId(idTamanhoAlfabetico));
+                return Ok(_tipoBll.ObterTamanhoPorId(idTamanho));
             }
             catch(System.Exception ex)
             {
@@ -44,12 +44,12 @@ namespace back_pi.Controllers
             }
         }
         
-        [HttpPost("AdicionarNovoTamanhoAlfabetico")]
-        public ActionResult<TamanhoAlfabetico> AdicionarNovoTamanhoAlfabetico(TamanhoAlfabeticoDTO tipo)
+        [HttpPost("AdicionarNovoTamanho")]
+        public ActionResult<Tamanho> AdicionarNovoTamanho(TamanhoDTO tipo)
         {
             try
             {
-                _tipoBll.AdicionarNovoTamanhoAlfabetico(tipo);
+                _tipoBll.AdicionarNovoTamanho(tipo);
                 return Ok();
             }
             catch (System.Exception ex)
@@ -58,12 +58,12 @@ namespace back_pi.Controllers
             }
         }
 
-        [HttpPut("AtualizarTamanhoAlfabetico/{idTamanhoAlfabetico}")]
-        public IActionResult AtualizarTamanhoAlfabetico(string idTamanhoAlfabetico, TamanhoAlfabeticoDTO tipoNew)
+        [HttpPut("AtualizarTamanho/{idTamanho}")]
+        public IActionResult AtualizarTamanho(string idTamanho, TamanhoDTO tipoNew)
         {
             try
             {
-                _tipoBll.AtualizarTamanhoAlfabetico(idTamanhoAlfabetico, tipoNew);
+                _tipoBll.AtualizarTamanho(idTamanho, tipoNew);
                 return Ok();
             }
             catch (System.Exception ex)
@@ -72,12 +72,12 @@ namespace back_pi.Controllers
             }
         }
 
-        [HttpDelete("ExcluirTamanhoAlfabetico/{idTamanhoAlfabetico}")]
-        public IActionResult ExcluirTamanhoAlfabetico(string idTamanhoAlfabetico)
+        [HttpDelete("ExcluirTamanho/{idTamanho}")]
+        public IActionResult ExcluirTamanho(string idTamanho)
         {
             try
             {
-                _tipoBll.ExcluirTamanhoAlfabetico(idTamanhoAlfabetico);
+                _tipoBll.ExcluirTamanho(idTamanho);
                 return Ok();
             }
             catch (System.Exception ex)

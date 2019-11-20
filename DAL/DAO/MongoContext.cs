@@ -22,7 +22,6 @@ namespace back_pi.DAL.DAO
         public IMongoCollection<Cor> CollectionCor => _db.GetCollection<Cor>("Cor");
         public IMongoCollection<Tipo> CollectionTipo => _db.GetCollection<Tipo>("Tipo");
         public IMongoCollection<Marca> CollectionMarca => _db.GetCollection<Marca>("Marca");
-        public IMongoCollection<TamanhoNumerico> CollectionTamanhoNumerico => _db.GetCollection<TamanhoNumerico>("TamanhoNumerico");
-        public IMongoCollection<TamanhoAlfabetico> CollectionTamanhoAlfabetico => _db.GetCollection<TamanhoAlfabetico>("TamanhoAlfabetico");
+        public IMongoCollection<Tamanho> CollectionTamanho => _db.GetCollection<Tamanho>("Tamanho");
     }
 }
