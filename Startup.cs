@@ -135,11 +135,8 @@ namespace back_pi
             services.AddScoped<ITipoDAO, TipoDAO>();
             services.AddScoped<ITipoBll, TipoBll>();
 
-            services.AddScoped<ITamanhoNumericoDAO, TamanhoNumericoDAO>();
-            services.AddScoped<ITamanhoNumericoBll, TamanhoNumericoBll>();
-
-            services.AddScoped<ITamanhoAlfabeticoDAO, TamanhoAlfabeticoDAO>();
-            services.AddScoped<ITamanhoAlfabeticoBll, TamanhoAlfabeticoBll>();
+            services.AddScoped<ITamanhoDAO, TamanhoDAO>();
+            services.AddScoped<ITamanhoBll, TamanhoBll>();
 
             services.AddScoped<SeedingService>();
         }

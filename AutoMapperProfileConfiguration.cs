@@ -68,17 +68,12 @@ namespace back_pi
             CreateMap<Cor, CorDTO>()
                 .AfterMap((model, dto) => dto.IdCor = model.IdCor);
 
-                // Mapeando a classe TamanhoAlfabetico
-            CreateMap<TamanhoAlfabeticoDTO, TamanhoAlfabetico>().
-                AfterMap((dto, model) => model.IdTamanhoAlfabetico = dto.IdTamanhoAlfabetico);
-            CreateMap<TamanhoAlfabetico, TamanhoAlfabeticoDTO>()
-                .AfterMap((model, dto) => dto.IdTamanhoAlfabetico = model.IdTamanhoAlfabetico);
+                // Mapeando a classe Tamanho
+            CreateMap<TamanhoDTO, Tamanho>().
+                AfterMap((dto, model) => model.IdTamanho = dto.IdTamanho);
+            CreateMap<Tamanho, TamanhoDTO>()
+                .AfterMap((model, dto) => dto.IdTamanho = model.IdTamanho);
 
-            // Mapeando a classe TamanhoNumerico
-            CreateMap<TamanhoNumericoDTO, TamanhoNumerico>().
-                AfterMap((dto, model) => model.IdTamanhoNumerico = dto.IdTamanhoNumerico);
-            CreateMap<TamanhoNumerico, TamanhoNumericoDTO>()
-                .AfterMap((model, dto) => dto.IdTamanhoNumerico = model.IdTamanhoNumerico);
         }
     }
 }
