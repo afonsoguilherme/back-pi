@@ -32,6 +32,19 @@ namespace back_pi.Controllers
             }
         }
 
+        [HttpGet("ObterGraficoInd/{idVendedor}")]
+        public ActionResult ObterGraficoInd(string idVendedor)
+        {
+            try
+            {
+                return Ok(_movimentoBll.ObterGraficoInd(idVendedor));
+            }
+            catch(System.Exception ex)
+            {
+                return BadRequest(ex);
+            }
+        }
+
         [HttpGet("ObterGrafico")]
         public ActionResult ObterGrafico()
         {

@@ -18,5 +18,6 @@ namespace back_pi.BLL
         void AtualizarMovimento(string idMovimento, MovimentoDTO movimentoNew);
         void ExcluirMovimento(string idMovimento);
         ICollection<Grafico> ObterGrafico();
+        ICollection<GraficoInd> ObterGraficoInd(string idVendedor);
     }
 }

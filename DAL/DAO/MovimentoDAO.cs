@@ -313,5 +313,37 @@ namespace back_pi.DAL.DAO
 
             return novaLista;
         }
+
+       public ICollection<GraficoInd> ObterGraficoInd(string idVendedor)
+        {
+            ICollection<GraficoInd> novaLista = new List<GraficoInd>();
+            var vendedores = _context.CollectionVendedor.Find(vendedor => vendedor.IdVendedor == idVendedor).ToList();
+            var qtdvendedores = vendedores.Count();
+            string [] nomesVendores = new string[qtdvendedores];
+            int [] qtdMovimentoSucesso = new int[qtdvendedores];
+            int [] qtdMovimentoFracasso = new int[qtdvendedores];
+            
+            for (var i = 0; i < qtdvendedores; i++)
+            {   
+                var qtdVendaFracasso = _context.CollectionMovimento.Find(movimento => movimento.IdVendedor == vendedores[i].IdVendedor && movimento.TipoMovimento == "Venda" && movimento.StatusVenda == false).ToList();
+                var valorFracasso = qtdVendaFracasso.Count();
+
+                var qtdVendaSucesso = _context.CollectionMovimento.Find(movimento => movimento.IdVendedor == vendedores[i].IdVendedor && movimento.TipoMovimento == "Venda" && movimento.StatusVenda == true).ToList();
+                int valorSucesso = qtdVendaSucesso.Count();
+                 
+                nomesVendores[i] = vendedores[i].NomeVendedor;
+
+                qtdMovimentoFracasso[i] = valorFracasso;
+                qtdMovimentoSucesso[i] = valorSucesso;
+            }
+
+            novaLista.Add(new GraficoInd{
+                labels = nomesVendores,
+                series1 = qtdMovimentoSucesso,
+                series2 = qtdMovimentoFracasso
+            });
+
+            return novaLista;
+        }
     }
 }

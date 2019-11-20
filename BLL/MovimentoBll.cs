@@ -26,8 +26,6 @@ namespace back_pi.BLL
             return verifica;
         }
           
-
-
         public ICollection<Grafico> ObterGrafico()
         {
             var verifica = _movimentoDAO.ObterGrafico();
@@ -39,6 +37,15 @@ namespace back_pi.BLL
             return verifica;
         }
 
+        public ICollection<GraficoInd> ObterGraficoInd(string idVendedor)
+        {
+            if((idVendedor != null)&&(idVendedor != ""))
+            {
+               return _movimentoDAO.ObterGraficoInd(idVendedor); 
+            }  
+            return null;
+        }
+        
         public List<MovimentoDTO> MovimentosVendedores()
         {
             var verifica = _movimentoDAO.MovimentosVendedores();
