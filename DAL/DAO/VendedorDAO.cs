@@ -102,7 +102,7 @@ namespace back_pi.DAL.DAO
             if(vendedor != null)
             {
                 Vendedor vendedorNovo = new Vendedor{
-                    NomeVendedor = vendedor.NomeVendedor,
+                    NomeVendedor = vendedor.NomeVendedor.ToUpper(),
                     CodigoVendedor = vendedor.CodigoVendedor,
                     ImagemVendedor = vendedor.ImagemVendedor
                 };
@@ -125,7 +125,7 @@ namespace back_pi.DAL.DAO
             {
                 Vendedor vendedorNovo = new Vendedor{
                     IdVendedor = idVendedor,
-                    NomeVendedor = vendedorNew.NomeVendedor,
+                    NomeVendedor = vendedorNew.NomeVendedor.ToUpper(),
                     CodigoVendedor = vendedorNew.CodigoVendedor,
                     ImagemVendedor = vendedorNew.ImagemVendedor
                 };

@@ -58,7 +58,7 @@ namespace back_pi.DAL.DAO
             if(tipo != null)
             {
                 Tipo tipoNovo = new Tipo{
-                    DescricaoTipo = tipo.DescricaoTipo
+                    DescricaoTipo = tipo.DescricaoTipo.ToUpper()
                 };
             
                 _context.CollectionTipo.InsertOne(tipoNovo);
@@ -73,7 +73,7 @@ namespace back_pi.DAL.DAO
             {
                 Tipo tipoNovo = new Tipo{
                     IdTipo = idTipo,
-                    DescricaoTipo = tipoNew.DescricaoTipo
+                    DescricaoTipo = tipoNew.DescricaoTipo.ToUpper()
                 };
 
                 _context.CollectionTipo.ReplaceOne(tipo => tipo.IdTipo == idTipo, tipoNovo);

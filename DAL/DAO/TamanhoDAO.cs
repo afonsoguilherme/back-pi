@@ -58,7 +58,7 @@ namespace back_pi.DAL.DAO
             if(tamanho != null)
             {
                 Tamanho tamanhoNovo = new Tamanho{
-                    DescricaoTamanho = tamanho.DescricaoTamanho
+                    DescricaoTamanho = tamanho.DescricaoTamanho.ToUpper()
                 };
             
                 _context.CollectionTamanho.InsertOne(tamanhoNovo);
@@ -73,7 +73,7 @@ namespace back_pi.DAL.DAO
             {
                 Tamanho tamanhoNovo = new Tamanho{
                     IdTamanho = idTamanho,
-                    DescricaoTamanho = tamanhoNew.DescricaoTamanho
+                    DescricaoTamanho = tamanhoNew.DescricaoTamanho.ToUpper()
                 };
 
                 _context.CollectionTamanho.ReplaceOne(tamanho => tamanho.IdTamanho == idTamanho, tamanhoNovo);

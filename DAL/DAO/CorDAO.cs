@@ -58,7 +58,7 @@ namespace back_pi.DAL.DAO
             if(cor != null)
             {
                 Cor corNovo = new Cor{
-                    DescricaoCor = cor.DescricaoCor
+                    DescricaoCor = cor.DescricaoCor.ToUpper()
                 };
             
                 _context.CollectionCor.InsertOne(corNovo);
@@ -73,7 +73,7 @@ namespace back_pi.DAL.DAO
             {
                 Cor corNovo = new Cor{
                     IdCor = idCor,
-                    DescricaoCor = corNew.DescricaoCor
+                    DescricaoCor = corNew.DescricaoCor.ToUpper()
                 };
 
                 _context.CollectionCor.ReplaceOne(cor => cor.IdCor == idCor, corNovo);

@@ -58,7 +58,7 @@ namespace back_pi.DAL.DAO
             if(marca != null)
             {
                 Marca marcaNovo = new Marca{
-                    DescricaoMarca = marca.DescricaoMarca
+                    DescricaoMarca = marca.DescricaoMarca.ToUpper()
                 };
             
                 _context.CollectionMarca.InsertOne(marcaNovo);
@@ -73,7 +73,7 @@ namespace back_pi.DAL.DAO
             {
                 Marca marcaNovo = new Marca{
                     IdMarca = idMarca,
-                    DescricaoMarca = marcaNew.DescricaoMarca
+                    DescricaoMarca = marcaNew.DescricaoMarca.ToUpper()
                 };
 
                 _context.CollectionMarca.ReplaceOne(marca => marca.IdMarca == idMarca, marcaNovo);

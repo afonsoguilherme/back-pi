@@ -24,8 +24,8 @@ namespace back_pi.DAL.Models
         [BsonElement("CorProduto")]
         public string CorProduto { get; set; }
 
-        [BsonElement("NumeroProduto")]
-        public string NumeroProduto { get; set; }
+        [BsonElement("TamanhoProduto")]
+        public string TamanhoProduto { get; set; }
 
         [BsonElement("DescricaoProduto")]
         public string DescricaoProduto { get; set; }

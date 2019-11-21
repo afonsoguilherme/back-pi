@@ -10,7 +10,7 @@ namespace back_pi.DAL.DTO
         public string TipoProduto { get; set; }
         public string MarcaProduto { get; set; }
         public string CorProduto { get; set; }
-        public string NumeroProduto { get; set; }
+        public string TamanhoProduto { get; set; }
         public string DescricaoProduto { get; set; }
         public string NomeCliente { get; set; }
         public string TelefoneCliente { get; set; }
