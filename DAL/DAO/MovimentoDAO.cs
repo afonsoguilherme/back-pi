@@ -22,7 +22,7 @@ namespace back_pi.DAL.DAO
         {
             List<MovimentoDTO> movimentos = new List<MovimentoDTO>();
 
-            var sort = Builders<Movimento>.Sort.Ascending(movimento => movimento.IdMovimento);
+            var sort = Builders<Movimento>.Sort.Descending(movimento => movimento.HorarioMovimento.HoraInicioMovimento);
 
             var Movimentos = _context.CollectionMovimento.Find(movimento => true).Sort(sort).ToList() ;
 
@@ -222,7 +222,7 @@ namespace back_pi.DAL.DAO
         {
             if( movimento != null)
             {
-                var sort = Builders<Movimento>.Sort.Descending(m => m.IdMovimento);
+                var sort = Builders<Movimento>.Sort.Descending(m => m.HorarioMovimento.HoraInicioMovimento);
 
                 var item = _context.CollectionMovimento.Find<Movimento>(m => m.IdVendedor == movimento.IdVendedor).Sort(sort).FirstOrDefault();
                 
