@@ -7,6 +7,9 @@ namespace back_pi.BLL
     {
         void AdicionarNovoVendedor(VendedorDTO vendedor);
         List<VendedorDTO> ObterTodosVendedores();
+        List<VendedorDTO> ObterVendedorEmEspera();
+        List<VendedorDTO> ObterVendedorEmAusencia();
+        List<VendedorDTO> ObterVendedorEmAtendimento();
         VendedorDTO ObterVendedorPorId(string idVendedor);
         VendedorDTO ObterVendedorPorNome(string nomeVendedor);
         VendedorDTO ObterVendedorPorCodigo(string codigoVendedor);

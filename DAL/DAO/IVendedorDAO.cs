@@ -7,6 +7,9 @@ namespace back_pi.DAL.DAO
     {
         void AdicionarNovoVendedor(VendedorDTO vendedor);
         List<VendedorDTO> ObterTodosVendedores();
+        List<VendedorDTO> ObterVendedorEmEspera();
+        List<VendedorDTO> ObterVendedorEmAtendimento();
+        List<VendedorDTO> ObterVendedorEmAusencia();
         VendedorDTO ObterVendedorPorId(string idVendedor);
         VendedorDTO ObterVendedorPorNome(string nomeVendedor);
         VendedorDTO ObterVendedorPorCodigo(string codigoVendedor);

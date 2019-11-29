@@ -30,6 +30,67 @@ namespace back_pi.DAL.DAO
                     IdVendedor = item.IdVendedor,
                     NomeVendedor = item.NomeVendedor,
                     CodigoVendedor = item.CodigoVendedor,
+                    FilaVendedor = item.FilaVendedor,
+                    ImagemVendedor = item.ImagemVendedor
+                };
+                vendedores.Add(v);
+            }
+            return vendedores;
+        }
+
+        public List<VendedorDTO> ObterVendedorEmEspera()
+        {
+            List<VendedorDTO> vendedores = new List<VendedorDTO>();
+
+            var Vendedores = _context.CollectionVendedor.Find(vendedor => vendedor.FilaVendedor == "Espera").ToList() ;
+
+           foreach (var item in Vendedores)
+            {
+                VendedorDTO v = new VendedorDTO{
+                    IdVendedor = item.IdVendedor,
+                    NomeVendedor = item.NomeVendedor,
+                    CodigoVendedor = item.CodigoVendedor,
+                    FilaVendedor = item.FilaVendedor,
+                    ImagemVendedor = item.ImagemVendedor
+                };
+                vendedores.Add(v);
+            }
+            return vendedores;
+        }
+
+        public List<VendedorDTO> ObterVendedorEmAtendimento()
+        {
+            List<VendedorDTO> vendedores = new List<VendedorDTO>();
+
+            var Vendedores = _context.CollectionVendedor.Find(vendedor => vendedor.FilaVendedor == "Atendimento").ToList() ;
+
+           foreach (var item in Vendedores)
+            {
+                VendedorDTO v = new VendedorDTO{
+                    IdVendedor = item.IdVendedor,
+                    NomeVendedor = item.NomeVendedor,
+                    CodigoVendedor = item.CodigoVendedor,
+                    FilaVendedor = item.FilaVendedor,
+                    ImagemVendedor = item.ImagemVendedor
+                };
+                vendedores.Add(v);
+            }
+            return vendedores;
+        }
+
+        public List<VendedorDTO> ObterVendedorEmAusencia()
+        {
+            List<VendedorDTO> vendedores = new List<VendedorDTO>();
+
+            var Vendedores = _context.CollectionVendedor.Find(vendedor => vendedor.FilaVendedor == "Ausencia").ToList() ;
+
+           foreach (var item in Vendedores)
+            {
+                VendedorDTO v = new VendedorDTO{
+                    IdVendedor = item.IdVendedor,
+                    NomeVendedor = item.NomeVendedor,
+                    CodigoVendedor = item.CodigoVendedor,
+                    FilaVendedor = item.FilaVendedor,
                     ImagemVendedor = item.ImagemVendedor
                 };
                 vendedores.Add(v);
@@ -47,6 +108,7 @@ namespace back_pi.DAL.DAO
                     IdVendedor = resultado.IdVendedor,
                     NomeVendedor = resultado.NomeVendedor,
                     CodigoVendedor = resultado.CodigoVendedor,
+                    FilaVendedor = resultado.FilaVendedor,
                     ImagemVendedor = resultado.ImagemVendedor
                 };
                 return vendedorDTO;
@@ -67,6 +129,7 @@ namespace back_pi.DAL.DAO
                     IdVendedor = resultado.IdVendedor,
                     NomeVendedor = resultado.NomeVendedor,
                     CodigoVendedor = resultado.CodigoVendedor,
+                    FilaVendedor = resultado.FilaVendedor,
                     ImagemVendedor = resultado.ImagemVendedor
                 };
                 return vendedorDTO;
@@ -87,6 +150,7 @@ namespace back_pi.DAL.DAO
                     IdVendedor = resultado.IdVendedor,
                     NomeVendedor = resultado.NomeVendedor,
                     CodigoVendedor = resultado.CodigoVendedor,
+                    FilaVendedor = resultado.FilaVendedor,
                     ImagemVendedor = resultado.ImagemVendedor
                 };
                 return vendedorDTO;
@@ -104,6 +168,7 @@ namespace back_pi.DAL.DAO
                 Vendedor vendedorNovo = new Vendedor{
                     NomeVendedor = vendedor.NomeVendedor.ToUpper(),
                     CodigoVendedor = vendedor.CodigoVendedor,
+                    FilaVendedor = vendedor.FilaVendedor,
                     ImagemVendedor = vendedor.ImagemVendedor
                 };
             
@@ -127,6 +192,7 @@ namespace back_pi.DAL.DAO
                     IdVendedor = idVendedor,
                     NomeVendedor = vendedorNew.NomeVendedor.ToUpper(),
                     CodigoVendedor = vendedorNew.CodigoVendedor,
+                    FilaVendedor = vendedorNew.FilaVendedor,
                     ImagemVendedor = vendedorNew.ImagemVendedor
                 };
 

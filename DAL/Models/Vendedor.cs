@@ -17,5 +17,8 @@ namespace back_pi.DAL.Models
 
         [BsonElement("ImagemVendedor")]
         public string ImagemVendedor { get; set; }
+
+        [BsonElement("FilaVendedor")]
+        public string FilaVendedor { get; set; }
     }
 }

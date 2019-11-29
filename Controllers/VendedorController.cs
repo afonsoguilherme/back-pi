@@ -31,6 +31,45 @@ namespace back_pi.Controllers
             }
         }
 
+        [HttpGet("ObterVendedorEmEspera")]
+        public ActionResult<List<Vendedor>> ObterVendedorEmEspera()
+        {
+            try
+            {
+                return Ok(_vendedorBll.ObterVendedorEmEspera());
+            }
+            catch(System.Exception ex)
+            {
+                return BadRequest(ex);
+            }
+        }
+
+        [HttpGet("ObterVendedorEmAtendimento")]
+        public ActionResult<List<Vendedor>> ObterVendedorEmAtendimento()
+        {
+            try
+            {
+                return Ok(_vendedorBll.ObterVendedorEmAtendimento());
+            }
+            catch(System.Exception ex)
+            {
+                return BadRequest(ex);
+            }
+        }
+
+        [HttpGet("ObterVendedorEmAusencia")]
+        public ActionResult<List<Vendedor>> ObterVendedorEmAusencia()
+        {
+            try
+            {
+                return Ok(_vendedorBll.ObterVendedorEmAusencia());
+            }
+            catch(System.Exception ex)
+            {
+                return BadRequest(ex);
+            }
+        }
+
         [HttpGet("ObterVendedorPorId/{idVendedor}")]
         public ActionResult<Vendedor> ObterVendedorPorId(string idVendedor)
         {

@@ -25,6 +25,39 @@ namespace back_pi.BLL
             return verifica;
         }
 
+        public List<VendedorDTO> ObterVendedorEmEspera()
+        {
+            var verifica = _vendedorDAO.ObterVendedorEmEspera();
+
+            if(verifica == null){ return null; }
+            
+            this.Mensagem = "Metodo ObterVendedorEmEspera() BLL executado corretamente";
+            
+            return verifica;
+        }
+
+        public List<VendedorDTO> ObterVendedorEmAtendimento()
+        {
+            var verifica = _vendedorDAO.ObterVendedorEmAtendimento();
+
+            if(verifica == null){ return null; }
+            
+            this.Mensagem = "Metodo ObterVendedorEmAtendimento() BLL executado corretamente";
+            
+            return verifica;
+        }
+
+        public List<VendedorDTO> ObterVendedorEmAusencia()
+        {
+            var verifica = _vendedorDAO.ObterVendedorEmAusencia();
+
+            if(verifica == null){ return null; }
+            
+            this.Mensagem = "Metodo ObterVendedorEmAusencia() BLL executado corretamente";
+            
+            return verifica;
+        }
+
         public VendedorDTO ObterVendedorPorId(string idVendedor)
         {
             if((idVendedor != null)&&(idVendedor != ""))
